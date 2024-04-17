@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 from loguru import logger
@@ -5,7 +6,7 @@ from pathlib import Path
 
 class LogInitialization:
     def __init__(self):
-        project_path = Path.cwd()
+        project_path = os.path.dirname(os.path.abspath(__file__))
         log_path = Path(project_path, "log")
         t = time.strftime("%Y%m%d")
 
